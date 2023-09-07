@@ -1,11 +1,21 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
-import ModuleAlpha from '@/components/ModuleAlpha.vue';
+import ExplainAll from '@/components/common/ExplainAll.vue';
+import sortCardOneView from '@/components/games/sortCardOneView.vue';
 
 const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
-    name: "main",
-    component: ModuleAlpha,
+    redirect: "/explain",
+  },
+  {
+    path: "/explain",
+    name: "exmplain",
+    component: ExplainAll,
+  },
+  {
+    path: "/sortCardOne",
+    name: "sortCardOne",
+    component: sortCardOneView,
   },
 ];
 

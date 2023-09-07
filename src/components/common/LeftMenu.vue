@@ -23,7 +23,7 @@
         <template v-slot:activator="{ props }">
           <v-list-item v-bind="props" :title="menu.title"></v-list-item>
         </template>
-        <v-list-item v-for="child in menu.childrens" :key="child.id" :value="child.title" :prepend-icon="child.icon" :title="child.title">
+        <v-list-item v-for="child in menu.childrens" :key="child.id" :value="child.title" :prepend-icon="child.icon" :title="child.title" :to="child.to">
         </v-list-item>
       </v-list-group>
     </v-list>
@@ -39,14 +39,13 @@ const oneDepthItems = [
 ]
 const twoDepthsItems = [
   {
-    title: "Games", icon: "mdi-panorama", id: 5,
+    title: "Games", icon: "mdi-gamepad-square", id: 1,
     childrens: [
-      { title: "sortCard Ⅰ", icon: "mdi-panorama", to: "/sortCardOne", id: 501 },
+      { title: "sortCard Ⅰ", icon: "mdi-cards-spade", to: "/sortCardOne", id: 101 },
       // { title: "3D", icon: "mdi-panorama", to: "/3d_gallary", id: 502 },
     ]
   },
 ];
-
 </script>
 
 <style scoped></style>

@@ -8,6 +8,6 @@
 </template>
 
 <script lang="ts" setup>
-import LeftMenu from './components/LeftMenu.vue';
+import LeftMenu from './components/common/LeftMenu.vue';
 
 </script>
