@@ -14,35 +14,18 @@
 
     <v-spacer></v-spacer>
 
-    <v-list density="compact">
-      <v-list-item-group active-class="white--text">
-        <template v-for="menu in items">
-          <template v-if="menu.childrens">
-            <!-- <v-list-group :key="menu.id">
-              <template v-slot:activator>
-                <v-icon>{{ menu.icon }}</v-icon>
-                <v-list-item-title>{{ menu.title }}</v-list-item-title>
-              </template>
-              <template v-for="children in menu.childrens" :key="children.id">
-                <v-list-item :to="children.to" class="ml-2" :active-class="`accent-4 white--text`">
-                  <v-list-item-icon :active-class="`accent-4`">
-                    <v-icon>{{ children.icon }}</v-icon>
-                  </v-list-item-icon>
-                  <v-list-item-title>
-                    {{ children.title }}
-                  </v-list-item-title>
-                </v-list-item>
-              </template>
-            </v-list-group> -->
-          </template>
-          <template v-else>
-            <v-list-item :key="menu.id" :to="menu.to">
-              <v-icon>{{ menu.icon }}</v-icon>
-              <v-list-item-title>{{ menu.title }}</v-list-item-title>
-            </v-list-item>
-          </template>
+    <v-list density="comfortable">
+      <v-list-item v-for="menu in oneDepthItems" :key="menu.id" :to="menu.to" :prepend-icon="menu.icon">
+        <v-list-item-title>{{ menu.title }}</v-list-item-title>
+      </v-list-item>
+
+      <v-list-group v-for="menu in twoDepthsItems" :key="menu.id" :value="menu.title" :prepend-icon="menu.icon">
+        <template v-slot:activator="{ props }">
+          <v-list-item v-bind="props" :title="menu.title"></v-list-item>
         </template>
-      </v-list-item-group>
+        <v-list-item v-for="child in menu.childrens" :key="child.id" :value="child.title" :prepend-icon="child.icon" :title="child.title">
+        </v-list-item>
+      </v-list-group>
     </v-list>
   </v-navigation-drawer>
 </template>
@@ -51,16 +34,15 @@
 import { ref } from 'vue';
 
 const drawer = ref(true);
-const items = [
-  { title: "Cube", icon: "mdi-cube", to: "/", id: 1 },
-  { title: "Car", icon: "mdi-car", to: "/section2", id: 2 },
-  { title: "AroundView", icon: "mdi-view-dashboard", to: "/section3", id: 3 },
-  { title: "EarthMoon", icon: "mdi-earth", to: "/earth", id: 4 },
+const oneDepthItems = [
+  { title: "Explain", icon: "mdi-cube", to: "/explain", id: 1 },
+]
+const twoDepthsItems = [
   {
-    title: "Gallary", icon: "mdi-panorama-variant", id: 5,
+    title: "Games", icon: "mdi-panorama", id: 5,
     childrens: [
-      { title: "2D", icon: "mdi-cone", to: "/gallary", id: 501 },
-      { title: "3D", icon: "mdi-cone", to: "/3d_gallary", id: 502 },
+      { title: "sortCard Ⅰ", icon: "mdi-panorama", to: "/sortCardOne", id: 501 },
+      // { title: "3D", icon: "mdi-panorama", to: "/3d_gallary", id: 502 },
     ]
   },
 ];
