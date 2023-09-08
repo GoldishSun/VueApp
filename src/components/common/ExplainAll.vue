@@ -24,11 +24,12 @@ const explain_text_obj = reactive({
   }
 });
 
-const blackboard: Ref<null> = ref(null)
+const blackboard: Ref<HTMLElement | null> = ref(null)
 
 const start = () => {
   if (explain_text_obj.step1.clicked) return;
   const temp = setInterval(() => {
+    if(!blackboard.value) return;
     const text = explain_text_obj.step1.text[explain_text_obj.step1.cursor];
     if(text === '|') blackboard.value.innerHTML += "<br/>";
     else blackboard.value.innerHTML += text;
