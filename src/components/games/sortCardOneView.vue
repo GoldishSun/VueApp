@@ -5,7 +5,7 @@
         Let's Sort<br />
         - 이 게임의 목표는 최소 횟수로 보이지 않는 카드 뒷면의 숫자를 오름차순으로 정렬하는 것입니다. <br />
         - 두개의 카드를 고르고 Call을 하면 더 높은 숫자의 카드가 무엇인지 표시가 됩니다. <br />
-        - 위의 6개의 칸으로 나눠진 덱 위에 카드를 Drag&Drop하여 오름차순으로 나열해 주세요. <br />
+        - 6개의 칸으로 나눠진 덱 위에 카드를 Drag&Drop하여 오름차순으로 나열해 주세요. <br />
         - 전부 나열을 마쳤다면 Arrange를 눌러주세요.<br />
       </v-col>
     </v-row>
@@ -66,6 +66,18 @@
       <v-col cols="1">
         <v-btn @click="showMeResult">Call</v-btn>
       </v-col>
+    </v-row>
+    <v-row>
+      <v-col cols="12">　</v-col>
+    </v-row>
+    <v-row>
+      <v-col cols="12">　</v-col>
+    </v-row>
+    <v-row>
+      <v-col cols="12">　</v-col>
+    </v-row>
+    <v-row>
+      <v-col cols="12">　</v-col>
     </v-row>
   </v-container>
   <v-dialog v-model="faultDialog" width="auto">
@@ -139,7 +151,6 @@ const showMeResult = () => {
     deactivateEle(e2);
     selected.pop();
     selected.pop();
-    console.log(selected);
   }, 1000);
   callCount.value++;
 }
@@ -171,6 +182,7 @@ onMounted(() => {
     ele.setAttribute("draggable", true);
     ele.dataset.number = rnN;
     if (isAdmin) ele.innerHTML += rnN;
+    ele.innerHTML += '____________';
     ele.addEventListener("mouseover", () => {
       ele.classList.add('hoverCard')
     });
@@ -224,6 +236,8 @@ onMounted(() => {
 
 .dragIt {
   vertical-align: middle;
+  width: 11vw;
+  height: 15vw;
 }
 
 .casinoCard {

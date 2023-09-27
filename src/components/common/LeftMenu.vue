@@ -45,6 +45,12 @@ const twoDepthsItems = [
       // { title: "3D", icon: "mdi-panorama", to: "/3d_gallary", id: 502 },
     ]
   },
+  {
+    title: "WebRTC", icon: "mdi-power-socket-de", id: 2,
+    childrens: [
+      { title: "live(1:1)", icon: "mdi-video", to: "/oAolobby", id: 201 },
+    ]
+  }
 ];
 </script>
 

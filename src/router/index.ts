@@ -1,6 +1,8 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 import ExplainAll from '@/components/common/ExplainAll.vue';
 import sortCardOneView from '@/components/games/sortCardOneView.vue';
+import liveLobby from '@/components/webrtc/liveLobby.vue';
+import liveOneAndOne from '@/components/webrtc/liveOneAndOne.vue';
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -17,6 +19,16 @@ const routes: Array<RouteRecordRaw> = [
     name: "sortCardOne",
     component: sortCardOneView,
   },
+  {
+    path: "/oAolobby",
+    name: "oneAndOneLobby",
+    component: liveLobby,
+  },
+  {
+    path: "/oAoRoom",
+    name: "oneAndOneRoom",
+    component: liveOneAndOne,
+  }
 ];
 
 const router = createRouter({

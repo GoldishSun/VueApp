@@ -21,6 +21,7 @@ export default defineConfig({
   },
   server: {
     host: '0.0.0.0',
+    port: 3000,
   }
   /* remove the need to specify .vue files https://vitejs.dev/config/#resolve-extensions
   resolve: {
