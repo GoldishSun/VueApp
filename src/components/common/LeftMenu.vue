@@ -23,7 +23,8 @@
         <template v-slot:activator="{ props }">
           <v-list-item v-bind="props" :title="menu.title"></v-list-item>
         </template>
-        <v-list-item v-for="child in menu.childrens" :key="child.id" :value="child.title" :prepend-icon="child.icon" :title="child.title" :to="child.to">
+        <v-list-item v-for="child in menu.childrens" :key="child.id" :value="child.title" :prepend-icon="child.icon"
+          :title="child.title" :to="child.to">
         </v-list-item>
       </v-list-group>
     </v-list>
@@ -49,6 +50,7 @@ const twoDepthsItems = [
     title: "WebRTC", icon: "mdi-power-socket-de", id: 2,
     childrens: [
       { title: "live(1:1)", icon: "mdi-video", to: "/oAolobby", id: 201 },
+      { title: "streaming", icon: "mdi-video", to: "/oAoService", id: 202 },
     ]
   }
 ];
