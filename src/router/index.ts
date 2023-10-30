@@ -6,6 +6,7 @@ import liveOneAndOne from '@/components/webrtc/liveOneAndOne.vue';
 import liveService from '@/components/webrtc/liveService.vue';
 import liveStreamer from '@/components/webrtc/liveStreamer.vue';
 import liveViewer from '@/components/webrtc/liveViewer.vue';
+import EdgeSimulator from '@/components/task/EdgeSimulator.vue';
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -46,6 +47,11 @@ const routes: Array<RouteRecordRaw> = [
     path: "/oAoViewer",
     name: "Viewer",
     component: liveViewer,
+  },
+  {
+    path: "/simulator",
+    name: "Simulator",
+    component: EdgeSimulator 
   },
 ];
 

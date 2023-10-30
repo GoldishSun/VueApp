@@ -52,6 +52,12 @@ const twoDepthsItems = [
       { title: "live(1:1)", icon: "mdi-video", to: "/oAolobby", id: 201 },
       { title: "streaming", icon: "mdi-video", to: "/oAoService", id: 202 },
     ]
+  },
+  {
+    title: "Task", icon: "mdi-file-tree", id: 3,
+    childrens: [
+      { title: "edge-simulator", icon: "mdi-replay", to: "/simulator", id: 301 }
+    ]
   }
 ];
 </script>

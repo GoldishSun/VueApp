@@ -6,11 +6,14 @@
       </v-col>
     </v-row>
     <v-row>
-      <v-col cols="6">
+      <v-col cols="4">
         <video class="video-player" ref="video1" id="video1" autoplay playsinline></video>
       </v-col>
-      <v-col cols="6">
+      <v-col cols="4">
         <video class="video-player" ref="video2" id="video2" autoplay playsinline></video>
+      </v-col>
+      <v-col cols="4">
+        <video class="video-player" ref="video3" id="video3" autoplay playsinline></video>
       </v-col>
     </v-row>
   </v-container>

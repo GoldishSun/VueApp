@@ -11,6 +11,8 @@
   "dependencies": {
     "@mdi/font": "5.9.55",
     "agora-rtm-sdk": "^1.5.1",
+    "nats.ws": "^1.17.0",
+    "ol": "^7.4.0",
     "pinia": "2.1.4",
     "register-service-worker": "^1.7.2",
     "roboto-fontface": "*",

@@ -6,11 +6,14 @@
       </v-col>
     </v-row>
     <v-row>
-      <v-col cols="6">
+      <v-col cols="4">
         <video class="video-player" ref="video1" id="video1" autoplay playsinline></video>
       </v-col>
-      <v-col cols="6">
+      <v-col cols="4">
         <video class="video-player" ref="video2" id="video2" autoplay playsinline></video>
+      </v-col>
+      <v-col cols="4">
+        <video class="video-player" ref="video3" id="video3" autoplay playsinline></video>
       </v-col>
     </v-row>
   </v-container>
@@ -62,21 +65,21 @@ const init = async () => {
   channel = client.createChannel(roomId);
   await channel.join();
 
-  await navigator.mediaDevices.enumerateDevices().then((devices) => {
-    const videoDevices = devices.filter((device) => device.kind === 'videoinput');
-    const constraints = videoDevices.map((ele, idx, ori) => {
-      return navigator.mediaDevices.getUserMedia({
-        video: { deviceId: videoDevices[idx].deviceId }
-      })
-    });
-    return Promise.all(constraints)
-  })
-    .then((res) => {
-      res.forEach((ele, idx) => {
-        const v = document.getElementById(`video${idx + 1}`);
-        if (v) v.srcObject = ele;
-      })
-    })
+  // await navigator.mediaDevices.enumerateDevices().then((devices) => {
+  //   const videoDevices = devices.filter((device) => device.kind === 'videoinput');
+  //   const constraints = videoDevices.map((ele, idx, ori) => {
+  //     return navigator.mediaDevices.getUserMedia({
+  //       video: { deviceId: videoDevices[idx].deviceId }
+  //     })
+  //   });
+  //   return Promise.all(constraints)
+  // })
+  //   .then((res) => {
+  //     res.forEach((ele, idx) => {
+  //       const v = document.getElementById(`video${idx + 1}`);
+  //       if (v) v.srcObject = ele;
+  //     })
+  //   })
 
   channel.on("MemberJoined", handleUserJoined);
   channel.on("MemberLeft", handleUserLeft);
@@ -84,7 +87,7 @@ const init = async () => {
 };
 
 const handleUserLeft = () => {
-
+  console.log("user Left");
 };
 const handleMessageFromPeer = async (message: any, memberId: string) => {
   message = JSON.parse(message.text);
