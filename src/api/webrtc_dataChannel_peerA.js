@@ -16,3 +16,4 @@ localConnection.createOffer().then(offer => {
 }).then(() => console.log('setLocalDescription Success on local'));
 localConnection.setRemoteDescription(answer)
 .then(() => console.log('setRemoteDescription Success on local'));
+dataChannel.send("Heyo Peer B");

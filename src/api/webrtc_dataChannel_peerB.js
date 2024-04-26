@@ -18,3 +18,4 @@ remoteConnection.setRemoteDescription(offer)
 remoteConnection.createAnswer().then(answer => {
   remoteConnection.setLocalDescription(answer);
 }).then(() => console.log('setLocalDescription Success on remote'));
+remoteConnection.dataChannel.send("Hi Peer A");
