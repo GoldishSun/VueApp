@@ -43,6 +43,7 @@ const twoDepthsItems = [
     title: "Games", icon: "mdi-gamepad-square", id: 1,
     childrens: [
       { title: "sortCard Ⅰ", icon: "mdi-cards-spade", to: "/sortCardOne", id: 101 },
+      { title: "logLike ⌆", icon: "mdi-sine-wave", to: "/log-like", id: 102}
       // { title: "3D", icon: "mdi-panorama", to: "/3d_gallary", id: 502 },
     ]
   },
@@ -56,7 +57,8 @@ const twoDepthsItems = [
   {
     title: "Task", icon: "mdi-file-tree", id: 3,
     childrens: [
-      { title: "edge-simulator", icon: "mdi-replay", to: "/simulator", id: 301 }
+      { title: "edge-simulator", icon: "mdi-replay", to: "/simulator", id: 301 },
+      { title: "threejs-geojson", icon: "mdi-car", to: "/threejs-geojson", id: 302} ,
     ]
   }
 ];
